@@ -5,12 +5,15 @@ import { Component } from '@angular/core';
     template: `
      <button (click)="onSubmit()">Submit</button>
      <p>{{submitMessage}}</p>
+     <p>Don't have an account yet??</p>
+     <p>Sign Up Now!</p>
+     <button>Sign Up</button>
     `
 })
 export class DisplayComponent{
     submitMessage = '';
 
     onSubmit(){
-        this.submitMessage = 'Thanks for register!';
+        this.submitMessage = 'Welcome back!';
     }
 }
