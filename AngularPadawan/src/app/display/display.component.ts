@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-display',
     template: `
      <button (click)="onSubmit()">Submit</button>
-     <p>{{submitMessage}}</p>
+     <p>{{ submitMessage }}</p>
     `
 })
 export class DisplayComponent{
