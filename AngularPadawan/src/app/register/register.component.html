@@ -1,43 +1,64 @@
-<!-- <button *ngIf=true><app-register></app-register></button> -->
+<div class="container">
 
-<h2><strong>Sign Up</strong></h2>
-<form>
-    <div class="labels">
-        <label>Name:</label> 
-        <label>Email:</label> 
-        <label>Telephone:</label> 
-        <label>Gender:</label>
-        <label class="login">User:</label>
-        <label>Password:</label> 
+    <h2><strong> Sign Up </strong></h2>
+
+    <div id="userData">
+        <div>
+            <label class="labels">Name</label>
+            <label class="labels"></label>
+            <div class="wrapper">
+                <input type="text" class="box" placeholder="First name"
+                 [(ngModel)]="name">
+                <input type="text" class="box" placeholder="Last name"
+                [(ngModel)]="lastName">
+            </div>
+        </div>
+        <div>
+            <label class="labels">Email</label>
+            <label class="labels">Phone</label>
+            <div class="wrapper">
+                <input type="email"  class="box" placeholder="Email"
+                [(ngModel)]="email">
+                <input type="text" class="box" placeholder="Phone"
+                [(ngModel)]="phone">
+            </div>
+        </div>
+            <div>
+              <label class="labels lblGender">Gender</label>
+              <select class="select">
+                <option selected>Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+              </select>
     </div>
-    <div class="inputs">
-        <input type="text" name="name" placeholder="Name" class="text">
-        <input type="email" name="email" placeholder="Email" class="text">
-        <input type="phone" name="phone" placeholder="Phone" class="text">
-        <input type="radio" name="gender" value="M" class="radioBtn"> Male <br>
-        <input type="radio" name="gender" value="F" class="radioBtn"> Female <br>
-        <input type="radio" name="gender" value="O" class="radioBtn"> Others <br><br>
-        <input type="text" name="user" placeholder="Your user name" class="text">
-        <input type="password" name="password" placeholder="Your new password" class="text">
+
+    <div id="userLogin">
+        <div>
+            <label class="labels">User</label>
+            <div>
+                <input type="text" placeholder="User"
+                 class="box" [(ngModel)]="user">
+            </div>
+        </div>
+        <div>
+            <label class="labels">Password</label>
+            <div>
+                <input type="password" placeholder="Password"
+                 class="box" [(ngModel)]="password">
+            </div>
+        </div>
     </div>
-    <button (click)="onRegister()">Sign Up</button>
+
+    <div id="btnSubmit">
+        <button type="submit" class="btn" (click)="createLogin()">Sign Up</button>
+    </div>
+</div>
+
+<!-- <div>
+    <input type="text" [(ngModel)]="u">
+    <input type="text" [(ngModel)]="p">
+    <button (click)="checkLogin()">Login</button>
     <p>{{ message }}</p>
-</form>
+</div> -->
 
-    <!-- <label>Name:</label>    
-    <input type="text" name="name" placeholder="Name" class="text"><br><br>
-    <label>Email:</label> 
-    <input type="email" name="email" placeholder="Email" class="text"><br><br>
-    <label>Telephone:</label> 
-    <input type="phone" name="phone" placeholder="Phone" class="text"><br><br>
-    <label>Gender: </label><br><br>
-    <input type="radio" name="gender" value="M" class="text"> Masculino <br>
-    <input type="radio" name="gender" value="F" class="text"> Feminino <br>
-    <input type="radio" name="gender" value="O" class="text"> Outros <br><br>
-    <label>User:</label> 
-    <input type="text" name="user" placeholder="Your user name" class="text"><br><br>
-    <label>Password:</label> 
-    <input type="password" name="password" placeholder="Your new password" class="text"><br><br> -->
-
-
-<!-- <p *ngFor="let name in names">Test</p> -->
