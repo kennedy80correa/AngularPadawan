@@ -14,8 +14,16 @@ export class LoginComponent{
     user = new User('admin', 'admin');
     auth=false;
 
+
+    localStorage: Storage;
+
+    constructor(){
+        this.localStorage = window.localStorage;
+    }
+
     onValidation(){
         if((this.username === this.user.name) && (this.user.pass === this.password)){
+            this.localStorage.setItem('username', this.username);
             this.auth = true;
         }
     }
