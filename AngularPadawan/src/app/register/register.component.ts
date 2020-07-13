@@ -17,6 +17,11 @@ export class RegisterComponent implements OnInit {
   name='';
   user='';
   password='';
+
+  //variables to clear the form
+  lastName='';
+  email='';
+  phone='';
   
   constructor() { }
 
@@ -27,9 +32,16 @@ export class RegisterComponent implements OnInit {
     this.names.push(this.name);
     this.users.push(this.user);
     this.passwords.push(this.password);
+    this.clearForm();
+  }
+
+  clearForm(){
     this.name='';
     this.user='';
     this.password='';
+    this.lastName='';
+    this.email='';
+    this.phone='';
   }
 
   // u='';
