@@ -3,26 +3,43 @@
     padding: 0;
 }
 
-.container{
-    margin: 50px auto;
-    border: 2px solid black;
-}
-
 h2{
     margin: 20px;
     text-align: center;
+    font-size: 50px;
 }
+
+/* Ids */
 
 #userData{
     margin: 30px;
+   
 }
 
 #userLogin{
     margin: 30px auto;
+    border-top: 2px solid  rgb(124, 124, 124);
+}
+
+#btnSubmit{
+    margin: 60px;
+    text-align: center;
+}
+
+/* Classes */
+
+.container{
+    margin: 50px auto;
+    border-radius: 5px black;
+    box-shadow: 10px 10px 10px rgb(75, 72, 72);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
 }
 
 .labels{
-    margin: 20px 470px 10px 20px;
+    margin: 20px 450px 10px 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .wrapper {
@@ -43,6 +60,7 @@ h2{
     border-radius: 5px;
     margin-left: 20px;
     margin-top: 20px;
+    box-shadow: 2px 2px 2px rgb(75, 72, 72);
 }
 
 .lblGender{
@@ -53,14 +71,17 @@ h2{
     width: 200px;
     padding: 10px;
     border-radius: 5px;
-    background-color: blue;
+    background-color: rgba(33, 179, 7, 0.986);
     color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgb(75, 72, 72);
 }
 
-#btnSubmit{
-    margin: 60px;
-    text-align: center;
+.btn:hover{
+    box-shadow: 15px 15px 10px rgb(75, 72, 72);
 }
+
 
 
 
