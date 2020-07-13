@@ -22,38 +22,35 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-<<<<<<< HEAD
   
   createLogin(){
     this.names.push(this.name);
     this.users.push(this.user);
     this.passwords.push(this.password);
-  }
-=======
-
-  Message(){
-    this.message = "Thanks for register!";
+    this.name='';
+    this.user='';
+    this.password='';
   }
 
-  onRegisterName(event: any){
-    this.names.push((<HTMLInputElement>event.target).value);
-  }
+  // u='';
+  // p='';
+  // i=0;
+  // message='';
+  // checkLogin(){
+    
+  //   for(this.i = 0; this.i < this.users.length; this.i++){
+  //     if(this.users[this.i] === this.u)
+  //       break;
+  //   }
 
-  onRegisterUser(event: any){
-    this.users.push((<HTMLInputElement>event.target).value);
-  }
+  //   if(this.i === this.users.length)
+  //     this.message = 'User doesn\'t exist';
 
-  onRegisterPassword(event: any){
-    this.passwords.push((<HTMLInputElement>event.target).value);
-  }
+  //   else if(this.passwords[this.i] === this.p)
+  //     this.message = 'Hi ' + this.names[this.i];
 
-  
-  // onRegister(event: any, event: any, event: any){
-  //   this.names.push((<HTMLInputElement>event.target).value);
-  //   this.users.push((<HTMLInputElement>event.target).value);
-  //   this.passwords.push((<HTMLInputElement>event.target).value);
+  //   else
+  //     this.message='Password incorrect';
   // }
-
->>>>>>> 4059e8248f2b4eb4f4ee75d3d3ee6d6e23cf5afb
  
 }

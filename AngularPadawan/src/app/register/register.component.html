@@ -1,50 +1,62 @@
-<<<<<<< HEAD
 <div class="container">
-    <form #form="ngForm">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="labels">Name</label>
-                <input type="text" [(ngModel)]="name" class="form-control" 
-                placeholder="First name" [ngModelOptions]="{standalone: true}">
-                
-            </div>
-            <div class="form-group col-md-6">
-                <input type="text" class="form-control" 
+    <h2>Sign Up</h2>
+    <div id="userData">
+        <div>
+            <label class="labels">Name</label>
+            <label class="labels"></label>
+            <div class="wrapper">
+                <input type="text" class="box" placeholder="First name"
+                 [(ngModel)]="name">
+                <input type="text" class="box"
                 placeholder="Last name">
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="labels">Email</label>
-                <input type="email" class="form-control" 
-                placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="labels">Phone</label>
-                <input type="phone" class="form-control" 
-                placeholder="Phone">
+        <div>
+            <label class="labels">Email</label>
+            <label class="labels">Phone</label>
+            <div class="wrapper">
+                <input type="email"  class="box" placeholder="Email">
+                <input type="text" class="box" placeholder="Phone">
             </div>
         </div>
-    </form>
+        <div>
+            <div>
+              <label class="labels lblGender">Gender</label>
+              <select class="select">
+                <option selected>Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+              </select>
+            </div>
+    </div>
 
-    <form>
-        <div class="form-row">
-            <label for="inputUser" class="col-sm-2 col-form-label">User</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control"
-                placeholder="User" [(ngModel)]="user" [ngModelOptions]="{standalone: true}">
+    <div id="userLogin">
+        <div>
+            <label class="labels">User</label>
+            <div>
+                <input type="text" placeholder="User"
+                 class="box" [(ngModel)]="user">
             </div>
         </div>
-        <div class="form-row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" 
-                placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        <div>
+            <label class="labels">Password</label>
+            <div>
+                <input type="password" placeholder="Password"
+                 class="box" [(ngModel)]="password">
             </div>
         </div>
-    </form>
-    <button type="submit" class="btn btn-primary" (click)="createLogin()">Sign in</button>
+    </div>
+
+    <div id="btnSubmit">
+        <button type="submit" class="btn" (click)="createLogin()">Sign Up</button>
+    </div>
 </div>
 
-=======
->>>>>>> 4059e8248f2b4eb4f4ee75d3d3ee6d6e23cf5afb
+<!-- <div>
+    <input type="text" [(ngModel)]="u">
+    <input type="text" [(ngModel)]="p">
+    <button (click)="checkLogin()">Login</button>
+    <p>{{ message }}</p>
+</div> -->
+

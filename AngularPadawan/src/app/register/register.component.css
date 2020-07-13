@@ -1,3 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 50px auto;
+    border: 2px solid black;
+}
+
+h2{
+    margin: 20px;
+    text-align: center;
+}
+
+#userData{
+    margin: 30px;
+}
+
+#userLogin{
+    margin: 30px auto;
+}
+
+.labels{
+    margin: 20px 470px 10px 20px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 500px 400px;
+    grid-gap: 20px;
+  }
+  
+.box {
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
+    width: 500px;
+}
+
+.select{
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.lblGender{
+    margin-right: 0px;
+}
+
+.btn{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
+
+#btnSubmit{
+    margin: 60px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* h2{
     margin: 30px 0px 20px 100px;
 }
