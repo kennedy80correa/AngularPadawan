@@ -11,18 +11,21 @@
         <label>Password:</label> 
     </div>
     <div class="inputs">
-        <input type="text" name="name" placeholder="Name" class="text">
+        <input type="text" class="text" name="name" placeholder="Name" (input)="onRegisterName($event)">
         <input type="email" name="email" placeholder="Email" class="text">
         <input type="phone" name="phone" placeholder="Phone" class="text">
         <input type="radio" name="gender" value="M" class="radioBtn"> Masculino <br>
         <input type="radio" name="gender" value="F" class="radioBtn"> Feminino <br>
         <input type="radio" name="gender" value="O" class="radioBtn"> Outros <br><br>
-        <input type="text" name="user" placeholder="Your user name" class="text">
-        <input type="password" name="password" placeholder="Your new password" class="text">
+        <input type="text" name="user" placeholder="Your user name" class="text" (input)="onRegisterUser($event)">
+        <input type="password" name="password" placeholder="Your new password" class="text" (input)="onRegisterPassword($event)">
     </div>
-    <button (click)="onRegister()">Sign Up</button>
+    <button (click)="Message()">Sign Up</button>
     <p>{{ message }}</p>
+
 </form>
+
+<!-- <p *ngFor="let name in names">Test</p> -->
 
     <!-- <label>Name:</label>    
     <input type="text" name="name" placeholder="Name" class="text"><br><br>
@@ -40,4 +43,3 @@
     <input type="password" name="password" placeholder="Your new password" class="text"><br><br> -->
 
 
-<!-- <p *ngFor="let name in names">Test</p> -->
