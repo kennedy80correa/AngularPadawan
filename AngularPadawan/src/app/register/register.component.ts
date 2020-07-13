@@ -1,30 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  message = '';
+  
+  //arrays: save registers
   names = [];
   users = [];
   passwords = [];
+
+  //variables: to update arrays
+  name='';
+  user='';
+  password='';
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  onRegister(){
-    this.message = "Thanks for register!";
+  
+  createLogin(){
+    this.names.push(this.name);
+    this.users.push(this.user);
+    this.passwords.push(this.password);
   }
-
-  // onRegister(event: any, event: any, event: any){
-  //   this.names.push((<HTMLInputElement>event.target).value);
-  //   this.users.push((<HTMLInputElement>event.target).value);
-  //   this.passwords.push((<HTMLInputElement>event.target).value);
-  // }
-
  
 }
