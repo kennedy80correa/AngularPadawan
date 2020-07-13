@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 // import { DisplayComponent } from './display/display.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { FirstComponent } from './home/first/first.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HeaderComponent } from './header/header.component';
     // InputComponent,
     // DisplayComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    FirstComponent
   ],
   imports: [
     BrowserModule,
