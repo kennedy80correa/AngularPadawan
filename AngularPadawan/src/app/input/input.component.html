@@ -1,1 +1,12 @@
-<input type="text" placeholder="Enter">
+<input type="text" placeholder="Enter" [(ngModel)]="username" (input)="onInput($event)">
+<button class="btn btn-primary" [disabled]="username === ''" (click)="onAdd()">Add</button>
+<button class="btn btn-primary" [disabled]="username === ''" (click)="onClear()">Clear</button>
+<button class="btn btn-primary" (click)="onRemove($event)">Remove</button>
+<p *ngIf="show; else noUser">{{name}}. Your username is: {{username}}.</p>
+<ng-template #noUser>
+    <p [ngStyle]="{backgroundColor: getColor()}">Please fill in the field above.</p>
+    <p *ngFor="let user of users">Registered users: {{users}}</p>
+</ng-template>
+
+
+

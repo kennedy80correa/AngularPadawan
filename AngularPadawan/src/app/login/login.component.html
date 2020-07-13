@@ -1,0 +1,35 @@
+<div class="login">
+    <div class="signIn">
+        <h2>Sign In</h2>
+        <div class="row">
+            <div class="input-field col s12">
+                <label class="user">User</label>
+                <input type="text" [(ngModel)]="user">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <label class="password">Password</label>
+                <input type="password" [(ngModel)]="password">
+            </div>
+        </div>
+
+        
+
+
+        <div class="btn">
+            <div class="register">
+                <a href="#">REGISTER</a>
+            </div>
+            <button class="clear" type="submit" (click)="onClear()">Clear</button>
+            <button class="enter" type="submit" (click)="onValidation()">LOGIN</button>
+        </div>
+        <div class="message">
+            <p *ngIf="auth; else incorrect" [ngStyle]="{backgroundColor: getColor()}">{{'Login successful'}}</p>
+            <ng-template #incorrect>
+                <p [ngStyle]="{backgroundColor: getColor()}">Please enter the correct username and password</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
