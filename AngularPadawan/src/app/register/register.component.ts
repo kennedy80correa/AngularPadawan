@@ -8,6 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
   
+  localStorage: Storage;
+
+  constructor(){
+      this.localStorage = window.localStorage;
+  }
+
+  x='';
+  
+  ngOnInit(): void {
+    this.x = this.localStorage.getItem('username');
+  }
+  
+
   //arrays: save registers
   names = [];
   users = [];
@@ -23,10 +36,9 @@ export class RegisterComponent implements OnInit {
   email='';
   phone='';
   
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
+  
   
   createLogin(){
     this.names.push(this.name);
