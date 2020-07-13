@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { User } from '../user/user.component';
 
 @Component({
   selector: 'app-register',
@@ -9,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
   
   //arrays: save registers
-  names = [];
-  users = [];
-  passwords = [];
+  // names = [];
+  // users = [];
+  // passwords = [];
 
-  //variables: to update arrays
+  //array of User
+  // us: User;
+
+  //variables: to update array
   name='';
   user='';
   password='';
@@ -29,13 +33,11 @@ export class RegisterComponent implements OnInit {
   }
   
   createLogin(){
-    this.names.push(this.name);
-    this.users.push(this.user);
-    this.passwords.push(this.password);
-    this.clearForm();
+    new User(this.name, this.user, this.password);
+    this.onClear();
   }
 
-  clearForm(){
+  onClear(){
     this.name='';
     this.user='';
     this.password='';
@@ -44,25 +46,12 @@ export class RegisterComponent implements OnInit {
     this.phone='';
   }
 
-  // u='';
-  // p='';
-  // i=0;
-  // message='';
-  // checkLogin(){
-    
-  //   for(this.i = 0; this.i < this.users.length; this.i++){
-  //     if(this.users[this.i] === this.u)
-  //       break;
-  //   }
 
-  //   if(this.i === this.users.length)
-  //     this.message = 'User doesn\'t exist';
 
-  //   else if(this.passwords[this.i] === this.p)
-  //     this.message = 'Hi ' + this.names[this.i];
 
-  //   else
-  //     this.message='Password incorrect';
+  // createLogin(){
+  //   // this.names.push(this.name);
+  //   // this.users.push(this.user);
+  //   // this.passwords.push(this.password);
   // }
- 
 }

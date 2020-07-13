@@ -9,15 +9,32 @@ import { User } from '../user/user.component';
 })
 
 export class LoginComponent{
+
+    user: User;
     username='';
     password='';
-    user = new User('admin', 'admin');
     auth=false;
+    index = 0;
+    message='';
 
     onValidation(){
-        if((this.username === this.user.name) && (this.user.pass === this.password)){
+        for(this.index=0; this.index < this.user.users.length;this.index++){
+            if((this.username === this.user.users[this.index].name)){
+                break;
+            }
+        }
+
+        if(this.index === this.user.users.length)
+            this.message = 'User not found';
+
+        else if(this.password === this.user.users[this.index].pass){
+            this.message = 'Access released';
             this.auth = true;
         }
+        else
+            this.message = 'Password Incorrect';
+            
+        
     }
 
     getColor(){

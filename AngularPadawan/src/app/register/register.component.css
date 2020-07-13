@@ -12,13 +12,12 @@ h2{
 /* Ids */
 
 #userData{
-    margin: 30px;
-   
+    margin: 30px; 
 }
 
 #userLogin{
     margin: 30px auto;
-    border-top: 2px solid  rgb(124, 124, 124);
+    border-top: 2px solid  rgb(226, 225, 225);
 }
 
 #btnSubmit{
