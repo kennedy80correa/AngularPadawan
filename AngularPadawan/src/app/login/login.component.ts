@@ -18,18 +18,18 @@ export class LoginComponent{
     password='';
     user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
+    pass='';
 
     localStorage: Storage;
 
     constructor(){
         this.localStorage = window.localStorage;
     }
-
+    
     onValidation(){
-        this.registeredUsername = this.localStorage.getItem('username');
-        this.registeredPassword = this.localStorage.getItem('password');
-        if((this.username === this.registeredUsername) && (this.registeredPassword === this.password)){
-            this.localStorage.setItem('username', this.username);
+        this.registeredPassword = this.localStorage.getItem(this.password);
+        this.pass = this.password;
+        if(this.registeredPassword === this.pass){
             this.auth = true;
         }
     }
