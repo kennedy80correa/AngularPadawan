@@ -11,7 +11,7 @@ import { User } from '../user/user.component';
 export class LoginComponent{
     username='';
     password='';
-    user = new User('admin', 'admin');
+    user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
 
 
@@ -22,7 +22,7 @@ export class LoginComponent{
     }
 
     onValidation(){
-        if((this.username === this.user.name) && (this.user.pass === this.password)){
+        if((this.username === this.user.user) && (this.user.password === this.password)){
             this.localStorage.setItem('username', this.username);
             this.auth = true;
         }

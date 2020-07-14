@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user/user.component';
 
 
 @Component({
@@ -22,9 +23,10 @@ export class RegisterComponent implements OnInit {
   
 
   //arrays: save registers
-  names = [];
-  users = [];
-  passwords = [];
+  users: User[] = [];
+  // names = [];
+  // users = [];
+  // passwords = [];
 
   //variables: to update arrays
   name='';
@@ -41,9 +43,17 @@ export class RegisterComponent implements OnInit {
   
   
   createLogin(){
-    this.names.push(this.name);
-    this.users.push(this.user);
-    this.passwords.push(this.password);
+    // console.log(this.users.length); //just for test number of elements into the users array
+    this.users.push( new User(this.name, 
+                              this.lastName, 
+                              this.email, 
+                              this.phone, 
+                              this.user, 
+                              this.password));
+  // console.log(this.users.length); //just for test number of elements into the users array
+    // this.names.push(this.name);
+    // this.users.push(this.user);
+    // this.passwords.push(this.password);
     this.clearForm();
   }
 
