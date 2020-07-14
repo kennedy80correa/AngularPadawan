@@ -1,11 +1,18 @@
-<div class="Menu">
-    <ul class="nav navbar-nav">
-        <li><button routerLink="/first" routerLinkActive="active">Introdução Lógica de Programção</button></li>
-        <li><button routerLink="/second" routerLinkActive="active">Linguagem C</button></li>
-        <li><button routerLink="/third" routerLinkActive="active">Linguagem C#</button></li>
-        <li><button routerLink="/fourth" routerLinkActive="active">HTML</button></li>
-        <li><button routerLink="/fifth" routerLinkActive="active">Angular</button></li>
-    </ul>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle">Conteúdo <span class="caret"></span></button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="/first" routerLinkActive="active">Introdução Lógica de Programção</a></li>
+                    <li><a routerLink="/second" routerLinkActive="active">Linguagem C</a></li>
+                    <li><a routerLink="/third" routerLinkActive="active">Linguagem C#</a></li>
+                    <li><a routerLink="/fourth" routerLinkActive="active">HTML</a></li>
+                    <li><a routerLink="/fifth" routerLinkActive="active">Angular & Scrum</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container">
     <div class="row">

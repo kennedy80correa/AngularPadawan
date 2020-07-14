@@ -11,6 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FirstComponent} from './home/first/first.component';
+import { DropdownDirective } from './dropdown/dropdown.directives';
+import { SecondComponent } from './home/second/second.component';
+import { ThirdComponent } from './home/third/third.component';
+import { FourthComponent } from './home/fourth/fourth.component';
+import { FifthComponent } from './home/fifth/fifth.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +26,17 @@ import { FirstComponent} from './home/first/first.component';
     RegisterComponent,
     HeaderComponent,
     HomeComponent,
-    FirstComponent
+    FirstComponent,
+    DropdownDirective,
+    SecondComponent,
+    ThirdComponent,
+    FourthComponent,
+    FifthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
