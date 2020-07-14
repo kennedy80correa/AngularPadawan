@@ -1,33 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user/user.component';
+import { UserService } from '../user.service';
 
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [UserService]
 })
+
 export class RegisterComponent implements OnInit {
   
-  localStorage: Storage;
-
-  constructor(){
-      this.localStorage = window.localStorage;
-  }
-
-  x='';
+  constructor() { }
+  ngOnInit(): void {}
   
-  ngOnInit(): void {
-    this.x = this.localStorage.getItem('username');
-  }
-  
-
-  //arrays: save registers
-  users: User[] = [];
-  // names = [];
-  // users = [];
-  // passwords = [];
-
   //variables: to update arrays
   name='';
   user='';
@@ -37,24 +23,24 @@ export class RegisterComponent implements OnInit {
   lastName='';
   email='';
   phone='';
-  
-  // constructor() { }
 
-  
-  
+  //var of type UserService to access its methods
+  userService: UserService;
+
+  //i=0;
   createLogin(){
-    // console.log(this.users.length); //just for test number of elements into the users array
-    this.users.push( new User(this.name, 
-                              this.lastName, 
-                              this.email, 
-                              this.phone, 
-                              this.user, 
-                              this.password));
-  // console.log(this.users.length); //just for test number of elements into the users array
-    // this.names.push(this.name);
-    // this.users.push(this.user);
-    // this.passwords.push(this.password);
+    this.userService = new UserService(this.name, 
+                                        this.lastName, 
+                                        this.email, 
+                                        this.phone, 
+                                        this.user, 
+                                        this.password);
+    this.userService.addUser(this.userService);
     this.clearForm();
+
+    //Just to list users registered
+    // for(this.i=0; this.i < this.userService.usersList.length; this.i++)
+    // console.log(this.userService.usersList[this.i].user); 
   }
 
   clearForm(){
@@ -66,11 +52,6 @@ export class RegisterComponent implements OnInit {
     this.phone='';
   }
 
-  // u='';
-  // p='';
-  // i=0;
-  // message='';
-  // checkLogin(){
     
   //   for(this.i = 0; this.i < this.users.length; this.i++){
   //     if(this.users[this.i] === this.u)
