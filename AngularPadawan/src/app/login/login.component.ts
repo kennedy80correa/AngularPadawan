@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input, EventEmitter } from '@angular/core';
 import { User } from '../user/user.component';
 
 @Component({
@@ -9,11 +9,15 @@ import { User } from '../user/user.component';
 })
 
 export class LoginComponent{
+    // @Input() registeredUsername: string;
+    // @Input() registeredPassword: string;
+    registeredUsername='';
+    registeredPassword='';
+
     username='';
     password='';
     user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
-
 
     localStorage: Storage;
 
@@ -22,7 +26,9 @@ export class LoginComponent{
     }
 
     onValidation(){
-        if((this.username === this.user.user) && (this.user.password === this.password)){
+        this.registeredUsername = this.localStorage.getItem('username');
+        this.registeredPassword = this.localStorage.getItem('password');
+        if((this.username === this.registeredUsername) && (this.registeredPassword === this.password)){
             this.localStorage.setItem('username', this.username);
             this.auth = true;
         }

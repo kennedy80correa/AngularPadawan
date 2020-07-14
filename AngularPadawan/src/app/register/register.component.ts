@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../user/user.component';
 
 
@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
 
   //arrays: save registers
   users: User[] = [];
+  @Output() registeredUsers = new EventEmitter<User>();
+  register: User;
   // names = [];
   // users = [];
   // passwords = [];
@@ -44,16 +46,21 @@ export class RegisterComponent implements OnInit {
   
   createLogin(){
     // console.log(this.users.length); //just for test number of elements into the users array
-    this.users.push( new User(this.name, 
-                              this.lastName, 
-                              this.email, 
-                              this.phone, 
-                              this.user, 
-                              this.password));
+    this.register = new User(this.name, 
+                        this.lastName, 
+                        this.email, 
+                        this.phone, 
+                        this.user, 
+                        this.password);
+
+    this.users.push(this.register);
   // console.log(this.users.length); //just for test number of elements into the users array
     // this.names.push(this.name);
     // this.users.push(this.user);
     // this.passwords.push(this.password);
+    this.localStorage.setItem('username', this.user);
+    this.localStorage.setItem('password', this.password);
+    this.registeredUsers.emit(this.register);
     this.clearForm();
   }
 
