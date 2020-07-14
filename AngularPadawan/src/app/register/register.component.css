@@ -9,6 +9,10 @@ h2{
     font-size: 50px;
 }
 
+hr{
+    margin: 30px;
+}
+
 /* Ids */
 
 #userData{
@@ -17,7 +21,6 @@ h2{
 
 #userLogin{
     margin: 30px auto;
-    border-top: 2px solid  rgb(226, 225, 225);
 }
 
 #btnSubmit{
