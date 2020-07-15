@@ -1,29 +1,44 @@
-import { Injectable } from "@angular/core";
+// import { Injectable } from "@angular/core";
 
-@Injectable()
-export class UserService {
+// @Injectable()
+// export class UserService {
     
-    private usersList = [{ firstName: 'k80c', 
-                   lastName: 'k80c', 
-                   email: 'k80c@gmail.com', 
-                   phone: '999999999', 
-                   user: 'k80c', 
-                   password: '123'}];
+//     private usersList = [{ firstName: 'k80c', 
+//                    lastName: 'k80c', 
+//                    email: 'k80c@gmail.com', 
+//                    phone: '999999999', 
+//                    user: 'k80c', 
+//                    password: '123'}];
 
-    constructor(
-      public firstName: string,
-      public lastName: string,
-      public email: string,
-      public phone: string,
-      public user: string,
-      public password: string) 
-      {  }
+//     constructor(
+//       public firstName: string,
+//       public lastName: string,
+//       public email: string,
+//       public phone: string,
+//       public user: string,
+//       public password: string) 
+//       {  }
 
-      addUser(user: UserService){
-          this.usersList.push(user);
-      }
+//       addUser(user: UserService){
+//           this.usersList.push(user);
+//       }
 
-      getUser(){
-          return this.usersList.slice();
-      }
-  }
+//       getUser(){
+//           return this.usersList.slice();
+//       }
+//   }
+//     usersList: UserService[] = [];
+
+//     constructor(
+//       public firstName: string,
+//       public lastName: string,
+//       public email: string,
+//       public phone: string,
+//       public user: string,
+//       public password: string) 
+//       { }
+
+//       addUser(user: UserService){
+//           this.usersList.push(user);
+//       }
+//   }
