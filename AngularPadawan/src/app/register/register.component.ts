@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+//import { UserService } from '../user.service';
+import { usersList } from '../user.mock'
+import { User } from '../user/user.component';
 
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers: [UserService]
+  //providers: [UserService]
 })
 
 export class RegisterComponent implements OnInit {
@@ -25,17 +27,17 @@ export class RegisterComponent implements OnInit {
   phone='';
 
   //var of type UserService to access its methods
-  userService: UserService;
+  newUser: User;
 
   //i=0;
   createLogin(){
-    this.userService = new UserService(this.name, 
+    this.newUser = new User(this.name, 
                                         this.lastName, 
                                         this.email, 
                                         this.phone, 
                                         this.user, 
                                         this.password);
-    this.userService.addUser(this.userService);
+    usersList.push(this.newUser);
     this.clearForm();
 
     //Just to list users registered
