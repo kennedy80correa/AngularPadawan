@@ -1,5 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
 import { User } from '../user/user.component';
+import { Router} from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
     selector: 'app-login',
@@ -9,6 +11,8 @@ import { User } from '../user/user.component';
 })
 
 export class LoginComponent{
+    @Input() name: {username: string}
+
     username='';
     password='';
     user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
@@ -17,7 +21,7 @@ export class LoginComponent{
 
     localStorage: Storage;
 
-    constructor(){
+    constructor(private router: Router){
         this.localStorage = window.localStorage;
     }
 
@@ -25,6 +29,7 @@ export class LoginComponent{
         if((this.username === this.user.user) && (this.user.password === this.password)){
             this.localStorage.setItem('username', this.username);
             this.auth = true;
+            this.router.navigate(['/app-home']);
         }
     }
 
@@ -37,5 +42,4 @@ export class LoginComponent{
         this.password='';
         this.auth=false;
     }
-
 }

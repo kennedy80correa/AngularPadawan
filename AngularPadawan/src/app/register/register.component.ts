@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { User } from '../user/user.component';
 
 
@@ -8,7 +8,7 @@ import { User } from '../user/user.component';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+
   localStorage: Storage;
 
   constructor(){
