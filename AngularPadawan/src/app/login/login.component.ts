@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, Input, EventEmitter } from '@angular/core';
-import { User } from '../user/user.component';
+import { Component, ViewEncapsulation, Input, EventEmitter, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
     selector: 'app-login',
@@ -8,28 +8,29 @@ import { User } from '../user/user.component';
     encapsulation: ViewEncapsulation.Emulated
 })
 
-export class LoginComponent{
-    // @Input() registeredUsername: string;
-    // @Input() registeredPassword: string;
-    registeredUsername='';
-    registeredPassword='';
+export class LoginComponent implements OnInit{
+    @Input() users: { username: string, password: string};
+
+    usersList: { firstName: string,
+                lastName: string,
+                email: string,
+                phone: string,
+                user: string,
+                password: string }[] = [];
 
     username='';
     password='';
-    user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
+    // user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
-    pass='';
 
-    localStorage: Storage;
+    constructor(private userService : UserService) {}
 
-    constructor(){
-        this.localStorage = window.localStorage;
+    ngOnInit(){
+        this.usersList = this.userService.usersList;
     }
     
     onValidation(){
-        this.registeredPassword = this.localStorage.getItem(this.password);
-        this.pass = this.password;
-        if(this.registeredPassword === this.pass){
+        if((this.users.username === this.userService.user) && (this.users.password === this.userService.password)){
             this.auth = true;
         }
     }

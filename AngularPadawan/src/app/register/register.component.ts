@@ -5,14 +5,21 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  providers: [UserService]
+  styleUrls: ['./register.component.css']
 })
 
 export class RegisterComponent implements OnInit {
+
+  usersList: { 
+    firstName: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    user: string,
+    password: string }[] = [];
   
-  constructor() { }
-  ngOnInit(): void {}
+  constructor( private userService : UserService ) { }
+  ngOnInit() { this.usersList = this.userService.usersList }
   
   //variables: to update arrays
   name='';
@@ -25,7 +32,7 @@ export class RegisterComponent implements OnInit {
   phone='';
 
   //var of type UserService to access its methods
-  userService: UserService;
+  // userService: UserService;
 
   //i=0;
   createLogin(){
