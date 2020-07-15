@@ -16,6 +16,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path:'home/:name',
+    component:LoginComponent
+  },
+  {
     path: 'app-register',
     component: RegisterComponent
   },
