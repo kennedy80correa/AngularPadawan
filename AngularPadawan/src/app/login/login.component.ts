@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation, Input, EventEmitter, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import { User } from '../user/user.component'
-import { Router } from '@angular/router';
+import { Component, ViewEncapsulation, Input, OnInit } from '@angular/core';
+import { User } from '../user/user.component';
+import { Router} from '@angular/router';
+
 
 @Component({
     selector: 'app-login',
@@ -20,10 +20,16 @@ export class LoginComponent implements OnInit{
     // user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
 
-    constructor(private router: Router, private userService : UserService) {} 
+    // constructor(private router: Router, private userService : UserService) {} 
 
+    localStorage: Storage;
+
+    constructor(private router: Router){
+        this.localStorage = window.localStorage;
+    }
+    
     ngOnInit(){
-        this.usersList = this.userService.getUser();
+
     }
     
     onValidation(){
@@ -42,5 +48,4 @@ export class LoginComponent implements OnInit{
         this.users.password='';
         this.auth=false;
     }
-
 }
