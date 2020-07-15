@@ -1,37 +1,35 @@
 import { Component, ViewEncapsulation, Input, EventEmitter, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { User } from '../user/user.component'
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls:  ['./login.component.css'],
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated,
 })
 
 export class LoginComponent implements OnInit{
     @Input() users: { username: string, password: string};
 
-    usersList: { firstName: string,
-                lastName: string,
-                email: string,
-                phone: string,
-                user: string,
-                password: string }[] = [];
+    usersList: User[];
 
-    username='';
-    password='';
+    // username='';
+    // password='';
     // user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
     auth=false;
 
-    constructor(private userService : UserService) {}
+    constructor(private router: Router, private userService : UserService) {} 
 
     ngOnInit(){
-        this.usersList = this.userService.usersList;
+        this.usersList = this.userService.getUser();
     }
     
     onValidation(){
-        if((this.users.username === this.userService.user) && (this.users.password === this.userService.password)){
+        if((this.users.username === this.usersList[0].user) && (this.users.password === this.usersList[0].password)){
             this.auth = true;
+            this.router.navigate(['/app-home']);
         }
     }
 
@@ -40,8 +38,8 @@ export class LoginComponent implements OnInit{
     }
 
     onClear(){
-        this.username='';
-        this.password='';
+        this.users.username='';
+        this.users.password='';
         this.auth=false;
     }
 
