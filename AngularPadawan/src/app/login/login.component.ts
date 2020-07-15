@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 //import { User } from '../user/user.component';
 import { usersList } from '../user/user.mock'; //chama a lista
+import { Router} from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -16,11 +17,14 @@ export class LoginComponent{
     auth=false;
     i=0;
 
+    constructor(private router: Router){}
     onValidation(){
         for(this.i=0; this.i < usersList.length; this.i++){
             if((this.username === usersList[this.i].user) && 
-                (usersList[this.i].password === this.password))
+                (usersList[this.i].password === this.password)){
                 this.auth = true;
+                this.router.navigate(['/app-home']);
+            }
         }  
     }
 
