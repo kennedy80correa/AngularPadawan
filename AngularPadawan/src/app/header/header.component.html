@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <a class="navbar-brand">Projeto Padawan</a>
-        <h3 class="pull-right" >Welcome {{ list.lastLogin }}</h3>
+        <h3 class="pull-right"  *ngIf="list.lastLogin !== ''">Welcome {{ list.lastLogin }}</h3>
     </div>
 </nav>
 <router-outlet></router-outlet>
