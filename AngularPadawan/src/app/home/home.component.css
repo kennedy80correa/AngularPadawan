@@ -17,3 +17,7 @@ li{
 p,h3,h4{
     color: white;
 }
+
+hr{
+    margin: 20px 200px;
+}
