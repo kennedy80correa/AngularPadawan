@@ -35,7 +35,19 @@
     color: #01303f;
     font-weight: 700;
 }
+.message{
+    display: flex;
+    justify-content: center;
+}
 
+.alert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 20px;
+    font-size: 12px;
+}
 
 
 /* *{

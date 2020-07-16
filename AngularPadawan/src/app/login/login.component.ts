@@ -32,13 +32,19 @@ export class LoginComponent {
                 if ((this.username === usersList[this.i].user) &&
                     (usersList[this.i].password === this.password) && (this.password !== '')) {
                     this.auth = true;
-                    this.localStorage.setItem('validated', 'validated');
+                    this.localStorage.setItem(`${this.i}`, '' + this.i);
                     this.router.navigate(['/app-home']);
                     this.pedido.emit(this.username);
                 }
             }
-            if (this.auth===false)
+            if (this.auth===false){
                 this.validate=false;
+                alert('User or Password incorrect!');
+            }
+        }
+        if(this.password==='' && this.username ===''){
+            this.validate = false;
+            alert('User or Password incorrect!');
         }
     }
 
