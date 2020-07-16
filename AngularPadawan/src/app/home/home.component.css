@@ -8,8 +8,12 @@ button{
 h1{
     margin-top: 10px;
     text-align: center;
+    color: white;
 }
 li{
     text-align: center;
     display: inline;
+}
+p,h3,h4{
+    color: white;
 }
