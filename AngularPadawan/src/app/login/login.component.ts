@@ -12,6 +12,7 @@ import { stringify } from '@angular/compiler/src/util';
 
 export class LoginComponent{
     @Input() name: {username: string}
+    @Output() pedido = new EventEmitter();
 
     username='';
     password='';
@@ -30,6 +31,7 @@ export class LoginComponent{
             this.localStorage.setItem('username', this.username);
             this.auth = true;
             this.router.navigate(['/app-home']);
+            this.pedido.emit(this.username);
         }
     }
 

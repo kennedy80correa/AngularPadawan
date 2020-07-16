@@ -22,7 +22,6 @@
             <button class="clear" type="submit" (click)="onClear()">Clear</button>
             <button class="enter" type="submit" (click)="onValidation()">LOGIN</button>
         </div>
-
         <div class="message">
             <p *ngIf="auth; else incorrect" [ngStyle]="{backgroundColor: getColor()}">{{'Login successful'}}</p>
             <ng-template #incorrect>
