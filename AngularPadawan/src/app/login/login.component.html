@@ -1,34 +1,40 @@
-<div class="login">
-    <div class="signIn">
-        <h2>Sign In</h2>
-        <div class="row">
-            <div class="input-field col s12">
-                <label class="user">User</label>
-                <input type="text" [(ngModel)]="username" placeholder="Username">
+<div class="form-group row" id="container">
+    <div class="col-auto">
+        <div class="sign-in">
+            <h2>Sign In</h2>
+        </div>
+        <div class="form-group row">
+            <div class="input-field">
+                <label class="sr-only">User</label>
+                <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username">
             </div>
         </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-                <label class="password">Password</label>
-                <input type="password" [(ngModel)]="password" placeholder="Password">
+        <div class="form-group row">
+            <div class="input-field">
+                <label class="sr-only">Password</label>
+                <input type="password" class="form-control is-valid" [(ngModel)]="password" placeholder="Password">
             </div>
         </div>
 
-        <div class="btn">
-            <div class="register">
-                <a routerLink="/app-register" routerLinkActive="active">REGISTER</a>
+
+        <div class="form-group row">
+            <div class="buttons">
+                <button type="button" class="btn btn-link" routerLink="/app-register"
+                    routerLinkActive="active" id="reg">REGISTER</button>
+                <button class="btn btn-secondary" type="submit" (click)="onClear()">Clear</button>
+                <button class="btn btn-success" type="submit" (click)="onValidation()">LOGIN</button>
             </div>
-            <button class="clear" type="submit" (click)="onClear()">Clear</button>
-            <button class="enter" type="submit" (click)="onValidation()">LOGIN</button>
         </div>
 
         <div class="message">
             <p *ngIf="auth; else incorrect" [ngStyle]="{backgroundColor: getColor()}">{{'Login successful'}}</p>
             <ng-template #incorrect>
-                <p [ngStyle]="{backgroundColor: getColor()}">Please enter the correct username and password</p>
+                <p *ngIf="validate; else wrong"></p>
+                <ng-template #wrong>
+                    <p [ngStyle]="{backgroundColor: getColor()}">Please enter the correct username and password</p>
+                </ng-template>
             </ng-template>
         </div>
-
     </div>
 </div>

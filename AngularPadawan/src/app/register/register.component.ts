@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { usersList } from '../user/user.compList';
+import { usersList } from '../user/user.mock';
 import { User } from '../user/user.component';
 
 
@@ -8,8 +8,11 @@ import { User } from '../user/user.component';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-
 export class RegisterComponent implements OnInit {
+
+  localStorage: Storage;
+
+  x='';
   
   constructor() {}
   ngOnInit(): void {}
@@ -37,12 +40,13 @@ export class RegisterComponent implements OnInit {
   }
 
   clearForm(){
+
     this.name='';
     this.user='';
-    this.password='';
     this.lastName='';
     this.email='';
     this.phone='';
+    this.password='';
   }
 
 }
