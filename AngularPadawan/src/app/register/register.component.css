@@ -7,6 +7,7 @@ h2{
     margin: 20px;
     text-align: center;
     font-size: 50px;
+    color: white;
 }
 
 hr{
@@ -35,14 +36,14 @@ hr{
     margin: 50px auto;
     border-radius: 5px black;
     box-shadow: 10px 10px 10px rgb(75, 72, 72);
-    font-family: "Times New Roman", Times, serif;
-    font-size: 16px;
+    background-image: linear-gradient(315deg, #000000 0%, #41414193 74%);
 }
 
 .labels{
     margin: 20px 450px 10px 20px;
     font-weight: bold;
     font-size: 20px;
+    color: white;
 }
 
 .wrapper {
@@ -65,6 +66,7 @@ hr{
     margin-left: 20px;
     margin-top: 20px;
     box-shadow: 2px 2px 2px rgb(75, 72, 72);
+    color: black;
 }
 
 .lblGender{
