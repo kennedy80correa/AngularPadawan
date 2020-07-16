@@ -12,6 +12,10 @@ import { FifthComponent } from '../home/fifth/fifth.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: LoginComponent
+  },
+  {
     path: 'app-login',
     component: LoginComponent
   },
