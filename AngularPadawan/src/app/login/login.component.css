@@ -31,6 +31,11 @@
     justify-content: space-between;
 }
 
+.btn-success:hover,.btn-secundary:hover,.btn-link:hover{
+    box-shadow: 15px 15px 10px rgb(75, 72, 72);
+}
+
+
 #reg{
     color: #01303f;
     font-weight: 700;

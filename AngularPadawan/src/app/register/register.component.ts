@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { usersList } from '../user/user.mock';
 import { User } from '../user/user.component';
-
+import { UserService } from '../user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  localStorage: Storage;
-
-  x='';
-  
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private router: Router, private list: UserService) {}
   
   //form variables 
   name='';
@@ -25,22 +20,18 @@ export class RegisterComponent implements OnInit {
   email='';
   phone='';
 
-  //var to create a new user
-  newUser: User;
-
   createLogin(){
-    this.newUser = new User(this.name, 
-                            this.lastName, 
-                            this.email, 
-                            this.phone, 
-                            this.user, 
-                            this.password);
-    usersList.push(this.newUser);
-    this.clearForm();
+    this.list.addUser(new User(this.name, 
+                              this.lastName, 
+                              this.email, 
+                              this.phone, 
+                              this.user, 
+                              this.password));
+    //this.clearForm();
+    this.router.navigate(['/app-login']);
   }
 
   clearForm(){
-
     this.name='';
     this.user='';
     this.lastName='';

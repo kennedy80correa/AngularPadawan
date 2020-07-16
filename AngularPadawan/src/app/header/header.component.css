@@ -1,0 +1,16 @@
+.navbar{
+    height: 90px;
+}
+
+.navbar-brand{
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+}
+
+h3{
+    margin-top: 25px;
+    margin-right: 100px;
+    color: black;
+    font-size: 30px;
+}

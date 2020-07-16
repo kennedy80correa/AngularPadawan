@@ -5,8 +5,6 @@ import { AppRoutingModule } from './router/app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
-// import { InputComponent } from './input/input.component';
-// import { DisplayComponent } from './display/display.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +14,7 @@ import { SecondComponent } from './home/second/second.component';
 import { ThirdComponent } from './home/third/third.component';
 import { FourthComponent } from './home/fourth/fourth.component';
 import { FifthComponent } from './home/fifth/fifth.component';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,7 @@ import { FifthComponent } from './home/fifth/fifth.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
