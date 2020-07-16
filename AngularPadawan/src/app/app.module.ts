@@ -16,6 +16,7 @@ import { SecondComponent } from './home/second/second.component';
 import { ThirdComponent } from './home/third/third.component';
 import { FourthComponent } from './home/fourth/fourth.component';
 import { FifthComponent } from './home/fifth/fifth.component';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { FifthComponent } from './home/fifth/fifth.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-//import { User } from '../user/user.component';
-import { usersList } from '../user/user.mock'; //chama a lista
 import { Router } from '@angular/router';
+import { UserService } from '../user/user.service';
 
 @Component({
     selector: 'app-login',
@@ -13,50 +12,26 @@ import { Router } from '@angular/router';
 export class LoginComponent {
     username = '';
     password = '';
-    //user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
-    auth = false;
-    validate = true;
-    i = 0;
 
-    localStorage: Storage;
-
-    constructor(private router: Router) { this.localStorage = window.localStorage; }
+    constructor(private router: Router, private user: UserService) {}
+    
     onValidation() {
-        if (this.password !== '') {
-            for (this.i = 0; this.i < usersList.length; this.i++) {
-                if ((this.username === usersList[this.i].user) &&
-                    (usersList[this.i].password === this.password) && (this.password !== '')) {
-                    this.auth = true;
-                    this.localStorage.setItem('validated', 'validated');
-                    this.router.navigate(['/app-home']);
-                }
-            }
-            if (this.auth===false)
-                this.validate=false;
+        switch(this.user.validateLogin(this.username, this.password)){
+            case 0:
+                alert('Access released');
+                this.router.navigate(['/app-home']);
+                break;
+            case 1:
+                alert('Password incorrect');
+                break;
+            case 2:
+                alert('User not found');
+                break;
         }
-    }
-
-    // localStorage: Storage;
-
-    // constructor(){
-    //     this.localStorage = window.localStorage;
-    // }
-
-    // onValidation(){
-    //     if((this.username === this.user.user) && (this.user.password === this.password)){
-    //         this.localStorage.setItem('username', this.username);
-    //         this.auth = true;
-    //     }
-    // }
-
-    getColor() {
-        return this.auth === true ? 'green' : 'yellow';
     }
 
     onClear() {
         this.username = '';
         this.password = '';
-        this.auth = false;
-        this.validate = true;
     }
 }
