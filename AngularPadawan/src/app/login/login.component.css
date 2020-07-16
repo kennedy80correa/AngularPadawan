@@ -12,6 +12,7 @@
     -webkit-box-shadow: 10px 11px 25px 9px rgba(0,0,0,0.79);
     -moz-box-shadow: 10px 11px 25px 9px rgba(0,0,0,0.79);
     box-shadow: 10px 11px 25px 9px rgba(0,0,0,0.79);
+    margin: 150px;
 }
 
 .sign-in{
@@ -31,8 +32,10 @@
     justify-content: space-between;
 }
 
-.btn-success:hover,.btn-secundary:hover,.btn-link:hover{
-    box-shadow: 15px 15px 10px rgb(75, 72, 72);
+.btn-success:hover,.btn-secondary:hover,.btn-link:hover{
+    box-shadow: 5px 5px 5px rgb(75, 72, 72);
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 
@@ -53,6 +56,8 @@
     height: 20px;
     font-size: 12px;
 }
+
+
 
 
 /* *{

@@ -21,3 +21,7 @@ p,h3,h4{
 hr{
     margin: 20px 200px;
 }
+
+.btn-group{
+    margin-left: 50px;
+}

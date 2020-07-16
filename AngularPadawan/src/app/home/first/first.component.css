@@ -1,3 +1,7 @@
 p,h2,h3,h4,li{
     color: white;
 }
+
+.container{
+    padding-bottom: 30px;
+}
