@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { UserService } from '../user/user.service';
 
 @Component({
     selector: 'app-header',
-    templateUrl: './header.component.html'
+    templateUrl: './header.component.html',
+    styleUrls:  ['./header.component.css']
 })
 export class HeaderComponent{
-    constructor(private router: Router, private list: UserService) {}
+    constructor(public list: UserService) {}
 
 }
