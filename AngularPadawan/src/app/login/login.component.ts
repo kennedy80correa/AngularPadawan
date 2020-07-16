@@ -1,7 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { User } from '../user/user.component';
+import { Router} from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 //import { User } from '../user/user.component';
 import { usersList } from '../user/user.mock'; //chama a lista
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -9,8 +11,11 @@ import { Router } from '@angular/router';
     styleUrls:  ['./login.component.css'],
     encapsulation: ViewEncapsulation.Emulated
 })
-
+       
 export class LoginComponent {
+    @Input() name: {username: string}
+    @Output() pedido = new EventEmitter();
+
     username = '';
     password = '';
     //user = new User('admin', 'admin', 'admin', 'admin', 'admin', 'admin');
@@ -29,6 +34,7 @@ export class LoginComponent {
                     this.auth = true;
                     this.localStorage.setItem('validated', 'validated');
                     this.router.navigate(['/app-home']);
+                    this.pedido.emit(this.username);
                 }
             }
             if (this.auth===false)

@@ -7,6 +7,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent{
 
+    username:string;
+
+    receberPedido(valor){
+        this.username = valor;
+        console.log("Valor passado: ",valor)
+    }
     localStorage: Storage;
     ok='';
     isAuthenticated=false;
