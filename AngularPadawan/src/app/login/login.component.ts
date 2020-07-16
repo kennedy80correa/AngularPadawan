@@ -36,19 +36,6 @@ export class LoginComponent {
         }
     }
 
-    // localStorage: Storage;
-
-    // constructor(){
-    //     this.localStorage = window.localStorage;
-    // }
-
-    // onValidation(){
-    //     if((this.username === this.user.user) && (this.user.password === this.password)){
-    //         this.localStorage.setItem('username', this.username);
-    //         this.auth = true;
-    //     }
-    // }
-
     getColor() {
         return this.auth === true ? 'green' : 'yellow';
     }
