@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 //import { User } from '../user/user.component';
-import { usersList } from '../user/user.mock'; //chama a lista
+import { usersList } from '../user/user.compList'; //chama a lista
 import { Router} from '@angular/router';
 
 @Component({

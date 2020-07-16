@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { usersList } from '../user/user.mock';
+import { usersList } from '../user/user.compList';
 import { User } from '../user/user.component';
 
 
