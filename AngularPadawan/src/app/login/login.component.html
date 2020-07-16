@@ -1,3 +1,4 @@
+<div class="container"></div>
 <div class="form-group row" id="container">
     <div class="col-auto">
         <div class="sign-in">
@@ -26,21 +27,5 @@
                 <button class="btn btn-success" type="submit" (click)="onValidation()">LOGIN</button>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="message">
-=======
-
-        <!-- <div class="message">
->>>>>>> gtorr2
-            <p *ngIf="auth; else incorrect" [ngStyle]="{backgroundColor: getColor()}">{{'Login successful'}}</p>
-            <ng-template #incorrect>
-                <p *ngIf="validate; else wrong"></p>
-                <ng-template #wrong>
-                    <div class="alert alert-warning" role="alert">
-                        Please enter the correct username and password
-                    </div>
-                </ng-template>
-            </ng-template>
-        </div> -->
     </div>
 </div>
