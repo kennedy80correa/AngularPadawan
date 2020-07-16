@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, EventEmitter } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../user/user.component';
 import { Router} from '@angular/router';
 import { stringify } from '@angular/compiler/src/util';
@@ -11,10 +11,10 @@ import { stringify } from '@angular/compiler/src/util';
 })
 
 export class LoginComponent{
-    // @Input() registeredUsername: string;
-    // @Input() registeredPassword: string;
     registeredUsername='';
     registeredPassword='';
+    @Input() name: {username: string}
+    @Output() pedido = new EventEmitter();
 
     username='';
     password='';
@@ -34,6 +34,7 @@ export class LoginComponent{
         if(this.registeredPassword === this.pass){
             this.auth = true;
             this.router.navigate(['/app-home']);
+            this.pedido.emit(this.username);
         }
     }
 
